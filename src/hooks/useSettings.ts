@@ -42,10 +42,14 @@ const useSettings = () => {
   };
 
   const initSettings = async () => {
-    const res = await fetch(`${import.meta.env.VITE_API_URL}/${uuid}/settings`);
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/settings/${uuid}`);
 
     return (await res.json()) as Promise<Settings>;
   };
+
+  useEffect(() => {
+    console.log('Settings updated: ', settings);
+  }, [settings]);
 
   useEffect(() => {
     initSettings().then((data) => {

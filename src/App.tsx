@@ -17,7 +17,10 @@ function App() {
     animationIn: settings.display.animationIn,
     animationOut: settings.display.animationOut,
   });
-  const { initAudio } = useAudio({ src: settings.audio.base64 });
+  const { initAudio } = useAudio({
+    src: settings.audio.base64,
+    volume: settings.audio.volume,
+  });
 
   const [content, setContent] = useState<Content>({
     image: '',
