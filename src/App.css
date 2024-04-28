@@ -57,8 +57,7 @@ body {
   --animate-duration: 0.8s;
 }
 
-.wrapper.isShowing,
-.wrapper.isTesting {
+.wrapper.isShowing {
   opacity: 1;
 }
 

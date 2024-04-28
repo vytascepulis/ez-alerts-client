@@ -7,7 +7,6 @@ import classNames from 'classnames';
 import useSettings from './hooks/useSettings.ts';
 import useAnimation from './hooks/useAnimation.ts';
 import 'animate.css';
-import { images, isTesting, longText } from './contants.ts';
 import useAudio from './hooks/useAudio.ts';
 
 function App() {
@@ -63,16 +62,15 @@ function App() {
     <div
       className={classNames('wrapper animate__animated', animationState, {
         isShowing,
-        isTesting,
       })}
     >
       <div className="image-wrapper">
-        <img alt="" src={isTesting ? images.wide : content.image} />
+        <img alt="" src={content.image} />
       </div>
       <div className="text-wrapper">
         <span
           dangerouslySetInnerHTML={{
-            __html: isTesting ? longText : content.textContent,
+            __html: content.textContent,
           }}
         ></span>
       </div>
